@@ -1,15 +1,17 @@
+import java.util.*
+
 fun isWellFormed(expression: String): Boolean{
-    val stack = ArrayDeque<Char>()
+    val stack = Stack<Char>()
 
 
     for (char in expression){
         when(char){
-            '(', '{', '[' -> stack.addLast(char) 
+            '(', '{', '[' -> stack.push(char)
             ')' -> {
-                if (stack.isEmpty() || stack.removeLast() != '(') return false
+                if (stack.isEmpty() || stack.pop() != '(') return false
             }
             '}' -> {
-                if (stack.isEmpty() || stack.removeLast() != '{') return false
+                if (stack.isEmpty() || stack.pop() != '{') return false
             }
             ']' -> {
                 if (stack.isEmpty() || stack.removeLast() != '[') return false
