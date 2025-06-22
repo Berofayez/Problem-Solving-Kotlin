@@ -11,5 +11,7 @@ fun majorityElement(array: IntArray): Int{
     return result
 }
 
+
+
 //time o(n)
 //space o(1)
